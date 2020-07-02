@@ -71,6 +71,7 @@ public class CompatibilityManager {
 
     }
 
+    //TODO: move to text manager
     public void reportCompatibilityStatus(CommandSender commandSender) {
         if(isFullyCompatibleServerSoftware) {
             commandSender.sendMessage(LocaleLoader.getString("mcMMO.Template.Prefix",
@@ -80,7 +81,7 @@ public class CompatibilityManager {
             for(CompatibilityType compatibilityType : CompatibilityType.values()) {
                 if(!supportedLayers.get(compatibilityType)) {
                     commandSender.sendMessage(LocaleLoader.getString("mcMMO.Template.Prefix",
-                            "Support layer for " + StringUtils.getCapitalized(compatibilityType.toString()) + "is not supported on this version of Minecraft."));
+                            LocaleLoader.getString("Compatibility.Layer.Unsupported",  StringUtils.getCapitalized(compatibilityType.toString()))));
                 }
             }
         }
@@ -112,6 +113,11 @@ public class CompatibilityManager {
                         return NMSVersion.NMS_1_14_4;
                     case 15:
                         return NMSVersion.NMS_1_15_2;
+                    case 16:
+                        switch(minecraftGameVersion.getPatchVersion().asInt()) {
+                            case 1:
+                                return NMSVersion.NMS_1_16_1;
+                        }
                 }
         }
 

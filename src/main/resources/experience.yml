@@ -249,6 +249,10 @@ Experience_Values:
         Soul_Sand: 40
         Soul_Soil: 40
     Woodcutting:
+        Crimson_Hyphae: 50
+        Stripped_Crimson_Hyphae: 50
+        Warped_Hyphae: 50
+        Stripped_Warped_Hyphae: 50
         Nether_Wart_Block: 1
         Warped_Wart_Block: 1
         Shroomlight: 100
@@ -289,6 +293,7 @@ Experience_Values:
         Nether_Sprouts: 10
         Crimson_Fungus: 50
         Warped_Fungus: 50
+        Shroomlight: 250
         Bee_Nest: 200
         Sweet_Berry_Bush: 50
         Seagrass: 10
@@ -367,6 +372,10 @@ Experience_Values:
         Lily_Of_The_Valley: 150
         Wither_Rose: 500
     Mining:
+        Bone_Block: 500
+        Crying_Obsidian: 3000
+        Chain: 100
+        Blackstone: 55
         Warped_Nylium: 5
         Crimson_Nylium: 5
         Ancient_Debris: 7777
@@ -381,11 +390,15 @@ Experience_Values:
         Diamond_Ore: 2400
         Emerald_Ore: 1000
         End_Bricks: 50
+        Chiseled_Nether_Bricks: 50
+        Cracked_Nether_Bricks: 50
         Nether_Bricks: 50
+        Red_Nether_Bricks: 50
         End_Stone: 15
         Glowstone: 15
         Gold_Ore: 1300
         Nether_Gold_Ore: 1300
+        Gilded_Blackstone: 200
         Terracotta: 30
         Iron_Ore: 900
         Lapis_Ore: 800
@@ -437,6 +450,7 @@ Experience_Values:
         Iron: 2.5
         Gold: 0.3
         Diamond: 5.0
+        Netherite: 6.0
         Leather: 1.6
         String: 1.8
         Other: 1.5
@@ -528,7 +542,10 @@ Experience_Values:
             Wandering_trader: 1.0
             Bee: 1.5
             Piglin: 2.0
+            Piglin_Brute: 4.5
             Hoglin: 4.0
             Zombie_Pigman: 3.0
             Zombified_Piglin: 3.0
+            Strider: 1.2
+            Zoglin: 2.5
 

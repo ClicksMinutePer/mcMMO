@@ -1,11 +1,134 @@
+Version 2.1.131
+
+    New permission node 'mcmmo.ability.repair.netheriterepair' which is included in the mcmmo.defaults permission package
+    New permission node 'mcmmo.ability.salvage.netheritesalvage' which is included in the mcmmo.defaults permission package
+    Changed Salvage maximum quantity values to 4 for all Netherite armor
+    mcMMO will set the default salvage quantities for netherite armor to 4 once and then never again (see notes)
+
+    Added Basalt to Bonus Drops for Mining in config.yml (see notes)
+    Added Polished Basalt to Bonus Drops for Mining in config.yml (see notes)
+    Added Blackstone to Bonus Drops for Mining in config.yml (see notes)
+    Added Chain to Bonus Drops for Mining in config.yml (see notes)
+    Added Nether Bricks to Bonus Drops for Mining in config.yml (see notes)
+    Added Red Nether Bricks to Bonus Drops for Mining in config.yml (see notes)
+    Added Cracked Nether Bricks to Bonus Drops for Mining in config.yml (see notes)
+    Added Chiseled Nether Bricks to Bonus Drops for Mining in config.yml (see notes)
+    Added Crying Obsidian to Bonus Drops for Mining in config.yml (see notes)
+    Added Gilded Blackstone to Bonus Drops for Mining in config.yml (see notes)
+    Added Warped Roots to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Warped Stem to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Crimson Roots to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Crimson Stem to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Shroomlight to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Twisting Vines to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Nether Wart Block to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Warped Wart Block to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Weeping Vines to Bonus Drops for Herbalism in config.yml (see notes)
+    Added Crimson Hyphae to Bonus Drops for Woodcutting in config.yml (see notes)
+    Added Stripped Crimson Hyphae to Bonus Drops for Woodcutting in config.yml (see notes)
+    Added Warped Hyphae to Bonus Drops for Woodcutting in config.yml (see notes)
+    Added Stripped Warped Hyphae to Bonus Drops for Woodcutting in config.yml (see notes)
+
+    Added Red Nether Bricks to Experience tables for Mining in experience.yml (see notes)
+    Added Netherite to Experience tables for Repair in experience.yml (see notes)
+    Added Piglin Brute to Experience tables for all combat skills in experience.yml
+
+    Netherite now requires 100 Salvage skill (by default configs) in order to salvage
+    Added the missing NMS wiring (it should be noted NMS isn't currently being used in mcMMO, but the framework is there. Working on a sideproject involving this...)
+
+    NOTES:
+
+    You should not need to edit your configs to receive any changes in this patch, simply starting your server is enough.
+    Default salvage quantities for netherite armor were above 4 in some cases which was not intended, mcMMO will run some code to correct this once and then it will not edit the file again.
+    Repair and Salvage are going to get some tweaks regarding Netherite gear really soon.
+    This update adds quite a few missing entries for bonus drops, without these entries double drops on these items/blocks will not happen.
+
+
+Version 2.1.130
+    Fixed a bug that prevented Repair from working on the new Netherite weapons/armors
+    Fixed a bug where Netherite gear used Gold Ingots to repair instead of Netherite Scraps (by default)
+    mcMMO will now run a script to fix a misspelling of netherite in repair/salvage configs (script only runs once and then never again)
+    mcMMO will produce a fake PlayerItemDamageEvent before damaging axes in Tree Feller execution
+
+
+    NOTES:
+    Early versions of 1.16 support had Netherite misspelled, the script I added executes before loading those config files to fix the spelling mistakes if it finds any
+    If you are still having issues with Repair/Salvage, delete the repair and salvage .yml files in /plugins/mcMMO and restart the server
+
+Version 2.1.129
+    Added new subcommand /mmoxpbar disable - Hides all mcMMO XP bars
+    New locale string 'Commands.XPBar.DisableAll'
+    Added Blackstone to Mining experience tables
+    Added Chain to Mining experience tables
+    Added Bone Block to Mining experience tables
+    Added Cracked Nether Bricks to Mining experience tables
+    Added Chiseled Nether Bricks to Mining experience tables
+    Added Crying Obsidian to Mining experience tables
+    Added Gilded Blackstone to Mining experience tables
+    Added Crimson Hyphae to Woodcutting experience tables
+    Added Stripped Crimson Hyphae to Woodcutting experience tables
+    Added Warped Hyphae to Woodcutting experience tables
+    Added Stripped Warped Hyphae to Woodcutting experience tables
+    Added Shroomlight to Herbalism experience tables
+    Added Zoglin to combat experience tables
+    Added Redstone Dust to bonus drops for Mining ( edit config.yml )
+    Lodestone will now be ignored for activating abilities
+    Respawn Anchor will now be ignored for activating abilities
+    Soul Campfire will now be ignored for activating abilities
+
+    Edit your experience.yml or delete it to generate a new one
+    Edit config.yml and add Redstone_Dust under bonus drops for Mining, you could delete it to generate a new one but MySQL data is stored here
+
+    Default experience.yml looks like this now: https://raw.githubusercontent.com/mcMMO-Dev/mcMMO/master/src/main/resources/experience.yml
+
+Version 2.1.128
+    The first rank of Iron Arm for Unarmed now only gives 1.5 bonus damage instead of 4 (other ranks are the same as before)
+    Blast Mining nerf reverted
+    Fixed a bug where debris were not reduced from Blast Mining skills
+    Fixed a bug where certain types of ore did not receive bonuses from Blast Mining
+    Fixed a few locale errors with commands
+    (API) Added ExperienceAPI::addCombatXP for adding combat XP to players, signature may change so its deprecated for now
+    mcMMO now logs whether or not its using FlatFile or SQL database on load
+    (1.16) Strider added to combat experience with a value of 1.2
+
+    NOTES: A more thorough look at Unarmed balance will happen in the future, the intention of this nerf is to make Unarmed less rewarding until it is leveled quite a bit.
+    I do plan to add saving XP bar settings to an upcoming version of mcMMO, but I'm working on another thing for mcMMO atm.
+
+Version 2.1.127
+    Child Skills now have XP bars, they are hidden by default
+    Updated hu_HU locale (thanks andris155)
+    Updated korean locale (thanks GownHeeJun)
+    Fixed a potential resource leak (thanks f1xme)
+    Fixed some potential chunk bugs (thanks f1xme)
+
+
+    NOTES:
+    You can enable the child skill bars with the command /mmoxpbar <skill> show
+
 Version 2.1.126
     mcMMO now relies on NMS for some of its features, if NMS cannot properly be wired up when initializing mcMMO behaviours relying on NMS will either be partially supported or disabled
     mcMMO now has a compatibility mode, any features that require specific versions of Minecraft for full functionality will be disabled if your server is not running a compatible version, mcMMO will still function in compatibility mode, but either the feature will be modified or disabled depending on the version of the server software
     New command /mmocompat - Shows information about whether or not mcMMO is fully functional or if some features are disabled due to the server software not being fully supported. Can be used by players or console.
+    New command /mmoxpbar (alias /xpbarsettings) - Players can choose to always show XP bars or to never show XP bars on a per skill basis
+    XPBars now last for 3 seconds before hiding instead of 2 seconds
     Fixed an exploit involving fishing rods
+    mcMMO is now less verbose about unsupported materials found in configs
+
+    New locale strings
+        Commands.Description.mmoxpbar
+        Commands.Description.mmocompat
+        Commands.XPBar.Reset
+        Commands.XPBar.SettingChanged
+        Compatibility.Layer.Unsupported
+        Compatibility.Layer.PartialSupport
+
 
     Notes:
         There are no features that rely on NMS in this version, it took a lot of work to write the NMS framework and I'm going to delay implementation for future versions.
+        /mmoxpbar (or /xpbarsettings) example usages
+            /mmoxpbar show archery - Always show archery XP bar
+            /mmoxpbar hide acrobatics - Never show acrobatics XP bar
+            /mmoxpbar reset - Reset all settings related to XP bars (hide/show)
 
 Version 2.1.125
     *Fixed a bug where you could not place blocks on top of certain repair/salvage anvils
@@ -14,7 +137,7 @@ Version 2.1.125
 
 Version 2.1.124
     Repair/Salvage can now be set to use vanilla blocks that already do something and that vanilla functionality will be disabled by mcMMO (you could use vanilla-anvils instead of iron_blocks for repair now)
-    Added Gold_Nugget to Mining's Bonus_Drops in config.yml (edit your config)g
+    Added Gold_Nugget to Mining's Bonus_Drops in config.yml (edit your config)
     Added Piglin to experience.yml combat XP tables with a value of 2.0 (edit your config)
     Added Hoglin to experience.yml combat XP tables with a value of 4.0 (edit your config)
     Added Zombified_Piglin & Zombie_Pigman to experience.yml combat XP tables with a value of 3.0 (edit your config)

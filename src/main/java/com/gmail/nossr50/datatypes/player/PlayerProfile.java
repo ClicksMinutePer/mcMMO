@@ -266,6 +266,10 @@ public class PlayerProfile {
     }
 
     public int getSkillXpLevel(PrimarySkillType skill) {
+        if(skill.isChildSkill()) {
+            return 0;
+        }
+
         return (int) Math.floor(getSkillXpLevelRaw(skill));
     }
 
@@ -415,6 +419,10 @@ public class PlayerProfile {
      * @return the total amount of Xp until next level
      */
     public int getXpToLevel(PrimarySkillType primarySkillType) {
+        if(primarySkillType.isChildSkill()) {
+            return 0;
+        }
+
         int level = (ExperienceConfig.getInstance().getCumulativeCurveEnabled()) ? UserManager.getPlayer(playerName).getPowerLevel() : skills.get(primarySkillType);
         FormulaType formulaType = ExperienceConfig.getInstance().getFormulaType();
 

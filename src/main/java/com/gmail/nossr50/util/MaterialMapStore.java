@@ -943,7 +943,10 @@ public class MaterialMapStore {
         abilityBlackList.add("barrel");
         abilityBlackList.add("blast_furnace");
         abilityBlackList.add("campfire");
+        abilityBlackList.add("soul_campfire");
         abilityBlackList.add("composter");
+        abilityBlackList.add("lodestone");
+        abilityBlackList.add("respawn_anchor");
     }
     
     private void fillToolBlackList()
@@ -1073,6 +1076,7 @@ public class MaterialMapStore {
         toolBlackList.add("barrel");
         toolBlackList.add("blast_furnace");
         toolBlackList.add("campfire");
+        toolBlackList.add("soul_campfire");
         toolBlackList.add("cartography_table");
         toolBlackList.add("composter");
         toolBlackList.add("grindstone");
@@ -1080,7 +1084,18 @@ public class MaterialMapStore {
         toolBlackList.add("loom");
         toolBlackList.add("smoker");
         toolBlackList.add("stonecutter");
+        toolBlackList.add("lodestone");
+        toolBlackList.add("respawn_anchor");
     }
+
+    public HashSet<String> getNetheriteArmor() {
+        return netheriteArmor;
+    }
+
+    public HashSet<String> getNetheriteTools() {
+        return netheriteTools;
+    }
+
 
     public int getTier(Material material) {
         return getTier(material.getKey().getKey());
